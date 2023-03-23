@@ -261,7 +261,7 @@ class BOWModel(nn.Module):
         loss = loss.sum(dim=-1).mean()
 
         return loss
- class MatchingModel(nn.Module):
+class MatchingModel(nn.Module):
     def __init__(self, query_encoder, response_encoder, bow=False):
         super(MatchingModel, self).__init__()
         self.query_encoder = query_encoder
