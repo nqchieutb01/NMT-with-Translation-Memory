@@ -1,12 +1,12 @@
 CHECKPOINT_MBART = 'model/mbart_reduced_v1'
 CHECKPOINT_XLMR = 'model/tinyXLMR'
-GPU_DEVICE = 7
+GPU_DEVICE = 0
 ALPHA = 0
 ADD = ""
 FINE_TUNE = False
-SPM_MODEL = 'spm_kv.model'
+SPM_MODEL = 'spm.model'
 SHARE_BI = False
-MMR = True
+MMR = False
 FIXED = False
 TOPK  = 3
-# SPM_MODEL = 'model/mbart_reduced_v1/sentencepiece.bpe.model'
+
