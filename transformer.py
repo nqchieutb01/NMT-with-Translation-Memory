@@ -77,7 +77,8 @@ class FeedForwardLayer(nn.Module):
         nn.init.constant_(self.fc2.bias, 0.)
     
     def forward(self, x):
-        x = F.relu(self.fc1(x))
+#         x = F.relu(self.fc1(x))
+        x = F.gelu(self.fc1(x))
         x = F.dropout(x, p=self.dropout, training=self.training)
         x = self.fc2(x)
         return x
@@ -128,7 +129,7 @@ class MultiheadAttention(nn.Module):
             q = self.in_proj_q(query)
             k = self.in_proj_k(key)
             v = self.in_proj_v(value)
-        q *= self.scaling
+        q = q* self.scaling
 
 
         q = q.contiguous().view(tgt_len, bsz * self.num_heads, self.head_dim).transpose(0, 1)
