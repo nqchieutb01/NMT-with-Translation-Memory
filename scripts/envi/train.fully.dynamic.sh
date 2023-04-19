@@ -1,10 +1,8 @@
-dataset=${MTPATH}/esen
+dataset=${MTPATH}/envi
 python3 train.py --train_data ${dataset}/train.txt \
         --dev_data ${dataset}/dev.txt \
         --test_data ${dataset}/test.txt \
-        --src_vocab ${dataset}/src.vocab \
-        --tgt_vocab ${dataset}/tgt.vocab \
-        --retriever ${MTPATH}/mt.ckpts/esen/ckpt.exp.pretrain/epoch19_batch99999_acc0.99 \
+        --retriever ${MTPATH}/mt.ckpts/envi/ckpt.exp.pretrain/epoch19_batch99999_acc0.99 \
         --ckpt ${MTPATH}/mt.ckpts/esen/ckpt.exp.dynamic.qr \
         --world_size 2 \
         --gpus 2 \
