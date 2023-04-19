@@ -2,7 +2,7 @@
 
 ## Environment 
 
-The code is written and tested with the following packages:
+Các thư viện được dùng:
 
 - transformers==2.11.0
 - faiss-gpu==1.6.1
@@ -20,11 +20,13 @@ The code is written and tested with the following packages:
     Phiên bản không cố định E_{tgt}:  `sh scripts/esen/train.fully.dynamic.sh`
 5. testing:   `sh scripts/work.sh`
 
+Chỉnh sửa file `config.py` để thay đổi đường dẫn đến file spiecemodel, GPU_ID, thuật toán MMR 
+
 Các scripts khác:
 
-Transformer, see `sh scripts/train.vanilla.sh` .
+Transformer,  `sh scripts/train.vanilla.sh` .
 
-BM 25, see `sh scripts/train.bm25.sh`.
+BM 25,  `sh scripts/train.bm25.sh`.
 
 ## Citation
 
