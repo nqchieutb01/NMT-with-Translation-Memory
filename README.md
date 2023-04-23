@@ -1,6 +1,6 @@
 # Neural Machine Translation with Monolingual Translation Memory
 
-## Environment 
+## Môi trường 
 
 Các thư viện được dùng:
 
@@ -13,12 +13,15 @@ Các thư viện được dùng:
 
 0. do `export MTPATH=đường_dẫn_đến_thư_mục_data` 
 1. Sinh ra spiecemodel: `python3 spm.py` 
+Để lựa chọn các thuật toán khác nhau (BPE, unigram,..) hay là số lượng từ trong vocab thì bạn hãy sửa file `spm.py` theo nhu cầu.
+
 2. Huấn luyện trước mô hình retrieval: `sh scripts/envi/pretrain.sh`
 
 3. Xây dựng index cho dữ liệu nhớ: `sh scripts/envi/build_index.sh` (`input_file` chứa các câu trong tập ngôn ngữ đích. Để chạy được, cần phải xóa bỏ hết các câu trùng nhau trong `input_file`)
-4. training: `sh scripts/envi/train.multihead.dynamic.sh` (đây là phiên bản cố định $E_{tgt}$) 
-    Phiên bản không cố định E_{tgt}:  `sh scripts/esen/train.fully.dynamic.sh`
-5. testing:   `sh scripts/work.sh`
+4. Training: `sh scripts/envi/train.multihead.dynamic.sh` (đây là phiên bản cố định $E_{tgt}$) 
+
+    Phiên bản không cố định $E_{tgt}$:  `sh scripts/esen/train.fully.dynamic.sh`
+5. Testing:   `sh scripts/work.sh`
 
 Chỉnh sửa file `config.py` để thay đổi đường dẫn đến file spiecemodel, GPU_ID, thuật toán MMR 
 
